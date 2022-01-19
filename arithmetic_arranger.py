@@ -25,16 +25,15 @@ def arithmetic_arranger(problems, bool=None):
             return "Error: Numbers cannot be more than four digits."
         
         # getting the spacing regarding the longest operand
-        
         max_len = max(len(parts[0]), len(parts[2]))
 
         # drafiting an output
         ln1 = f"{parts[0]:>{max_len+2}}"
-        ln2 = f"{parts[1]}{' '*(max_len+1-len(parts[2]))}{parts[2]}"
+        ln2 = f"{parts[1]}{' '*(max_len+1-len(parts[2]))}{parts[2]}"  # the sign is left oriented and the numbers right oriented.
         ln3 = '-'*(max_len+2)
         
-        try:
-            draft[0] += (' ' * 4) + ln1
+        try:  # This is important because on the 1st run, there are no indexes on the list. That`s why the IndexError exception.
+            draft[0] += (' ' * 4) + ln1  # If you wrap this addition on a (), it will make the final string to have a space before the \n
             
         except IndexError:
             draft.append(ln1)
@@ -49,7 +48,7 @@ def arithmetic_arranger(problems, bool=None):
         
         # getting the answer
         if bool == True:
-            if '+' in parts[1]:
+            if '+' in parts[1]:  #  This is a way to make the subtraction work. 
                 tot = int(parts[0]) + int(parts[2])
 
             if '-' in parts[1]:
@@ -57,13 +56,13 @@ def arithmetic_arranger(problems, bool=None):
 
             ln4 = f"{tot:>{max_len+2}}"
             
-            try:
+            try:  
                 draft[3] += (' ' * 4) + ln4
             except IndexError:
                 draft.append(ln4)
     
     # Final formated output
-    try:
+    try:  # again, on the cases where the bool not True, this would give an IndexError.
         arranged_problems =  f"{draft[0]}\n{draft[1]}\n{draft[2]}\n{draft[3]}"
 
     except:
