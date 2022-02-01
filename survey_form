@@ -1,0 +1,69 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!-- 
+
+Code written in mar/2020 for the "Build a Survey Form" chalenge
+https://codepen.io/palomacortez/pen/GRpEKvV
+
+-->
+<h1 id="title">People`s habits in recycling</h1>
+<div>
+  <p id="description">This is a short inquire in order to comprehend the knoledge of a population have on recycling and their practices.</p>
+  <form action="submit_inquiry" id="survey-form">
+   <label for="name" id="name-label"> Name: </label> 
+    <input type="name" class="textimput" id="name" placeholder="Enter youy name" required><br />
+    <br />
+    <label for="email" id="email-label"> Email: </label>
+      <input type="email" class="textimput" id="email" placeholder="Enter your email" required><br />
+    <br />
+    <label for="Zip-code" id="number-label"> Zip-code: </label>  
+      <input type="number" class="textimput" id="number" placeholder="enter your zip code" required value="00000-000" min="00000" max="99999999"><br />
+    <br />
+    <label> 
+      <p class="topic">Do you recicle?</p>
+      <input type="radio" name="yes-no" value="yes-no" checked>yes
+      <input type="radio" name="yes-no" value="yes-no">no
+    </label>
+    <br />
+    <br />
+    <label class="topic" for="dropdown">How do your city segragate the reciclables?</label>
+    <select id="dropdown">City`s segregation
+    <div class="dropdownContent">
+      <option value="dry/wet">dry / wet</option>
+      <option value="paper/plastic and metal/glass">paper / plastic and metal / glass</option>
+      <option value="paper/plast/metal/glass">paper / plast / metal / glass</option>
+      <option value="paper/plast/metal/glass by collor">paper / plast / metal / glass by collor</option>
+      <option value="none">none</option>
+    </select>
+
+
+      <p class="topic">What do you segragate between your reciclables?</p>
+
+    <label for="organic"><input id="organic" type="checkbox" value="material"> organic</label>
+    <label for="paper"><input id="paper" type="checkbox" value="material"> paper</label>
+    <label for="metal"><input id="metal" type="checkbox" value="material"> metal</label>
+    <label for="plastic"><input id="plastic" type="checkbox" value="material"> plastic</label><br />
+    <label for="glass"><input id="glass" type="checkbox" value="material"> glass</label>
+    <label for="batteries"><input id="batteries" type="checkbox" value="material"> batteries</label>
+    <label for="lamps"><input id="lamps" type="checkbox" value="material"> lamps</label>
+    <label for="e-waste"><input id="e-waste" type="checkbox" value="material"> e-waste</label>
+  <br />
+      <br />
+      <p> Tell us if you consider the your city`s recycling system eficient. What improvement suggestions do you have?: </p> 
+    <textarea rows="5" cols="35" placeholder="Enter text here"name="comment" ></textarea><br />
+    <br />
+    <button id="submit" type="submit">Submit</button>
+  </form>
+</div>
+
+
+<!--
+HTML5 validation error email
+non-number error
+min max atribute validadion
+
+checkboxes, each of which must have a value attribute
+textarea at the end for additional comments.
+id="submit"
+
+-->
